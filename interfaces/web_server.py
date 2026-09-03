@@ -532,6 +532,74 @@ async def toggle_clipboard_api():
         started = clipboard_listener.start(on_capture=file_captured_content)
         return {"status": "success", "listening": started}
 
+# ═══════════════════════════════════════════════
+# SYSTEM INSIGHTS DIAGNOSTIC ENDPOINTS
+# ═══════════════════════════════════════════════
+
+@app.get("/api/system/overview")
+async def get_system_overview_api():
+    """Returns full hardware, OS, disk, and uptime overview."""
+    tool = tool_registry.get_tool("get_pc_overview")
+    if tool and hasattr(tool, "get_data"):
+        return tool.get_data()
+    return {"status": "error", "message": "Overview tool not available"}
+
+@app.get("/api/system/apps")
+async def get_system_apps_api(search: str = "", force_refresh: bool = False):
+    """Returns list of installed desktop applications."""
+    tool = tool_registry.get_tool("list_installed_apps")
+    if tool and hasattr(tool, "get_data"):
+        return tool.get_data(search=search, force_refresh=force_refresh)
+    return {"status": "error", "message": "Installed apps tool not available"}
+
+@app.get("/api/system/games")
+async def get_system_games_api(force_refresh: bool = False):
+    """Returns list of detected installed games."""
+    tool = tool_registry.get_tool("list_installed_games")
+    if tool and hasattr(tool, "get_data"):
+        return tool.get_data(force_refresh=force_refresh)
+    return {"status": "error", "message": "Installed games tool not available"}
+
+@app.get("/api/system/startup")
+async def get_system_startup_api():
+    """Returns list of Windows startup programs."""
+    tool = tool_registry.get_tool("list_startup_programs")
+    if tool and hasattr(tool, "get_data"):
+        return tool.get_data()
+    return {"status": "error", "message": "Startup programs tool not available"}
+
+@app.get("/api/system/processes")
+async def get_system_processes_api(sort_by: str = "memory", limit: int = 20):
+    """Returns list of running processes sorted by resource usage."""
+    tool = tool_registry.get_tool("list_running_processes")
+    if tool and hasattr(tool, "get_data"):
+        return tool.get_data(sort_by=sort_by, limit=limit)
+    return {"status": "error", "message": "Processes tool not available"}
+
+@app.get("/api/system/network")
+async def get_system_network_api():
+    """Returns network adapters, active connection, and bandwidth stats."""
+    tool = tool_registry.get_tool("get_network_info")
+    if tool and hasattr(tool, "get_data"):
+        return tool.get_data()
+    return {"status": "error", "message": "Network info tool not available"}
+
+@app.get("/api/system/battery")
+async def get_system_battery_api():
+    """Returns detailed battery health and power plan status."""
+    tool = tool_registry.get_tool("get_battery_and_power_info")
+    if tool and hasattr(tool, "get_data"):
+        return tool.get_data()
+    return {"status": "error", "message": "Battery info tool not available"}
+
+@app.get("/api/system/account")
+async def get_system_account_api():
+    """Returns logged-in OS user account metadata."""
+    tool = tool_registry.get_tool("get_user_account_info")
+    if tool and hasattr(tool, "get_data"):
+        return tool.get_data()
+    return {"status": "error", "message": "Account info tool not available"}
+
 def run_web_server(host: str = "127.0.0.1", port: int = 8000):
     """Starts the Uvicorn web server."""
     import uvicorn

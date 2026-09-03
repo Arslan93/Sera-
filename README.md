@@ -12,7 +12,8 @@
 | ⚛️ **Modern React Frontend** | Full React 18 SPA (`frontend/`) with Tailwind CSS, 3D radial hardware dials, functional **AI State Orb**, `Ctrl+K` command palette, and real-time WebSocket streaming. |
 | 🎙️ **Voice & Ambient Layer** | Hands-free background "Hey Sera" wake word detector, Groq Whisper Speech-To-Text (`whisper-large-v3-turbo`), and Microsoft Neural TTS (`edge-tts`). |
 | 💻 **Developer Studio** | Sandboxed subprocess code runner (`execute_code`), targeted file editor (`edit_file`), instant multi-framework code scaffolder (React, Express, FastAPI, HTML/Tailwind). |
-| 🧩 **Extensible Skills** | Dynamic plugin subsystem (`skills/`) with Daily Orientation Brief, RGPV Exam Study Sessions, Job & Internship Tracker, Client CRM Kanban, and Global Clipboard Hotkey (`Ctrl+Shift+S`). |
+| 📊 **System Insights** | Comprehensive 8-subtab read-only PC hardware, multi-drive storage breakdown, installed apps (registry), game library audit (Steam/Epic), startup entries, running process monitor, network, and battery telemetry. |
+| 🧩 **Extensible Skills** | Dynamic plugin subsystem (`skills/`) with System Insights, Daily Orientation Brief, RGPV Exam Study Sessions, Job & Internship Tracker, Client CRM Kanban, and Global Clipboard Hotkey (`Ctrl+Shift+S`). |
 | 💾 **Memory & Local Storage** | Persistent SQLite conversation history (`data/sera.db`) + crash-resilient atomic JSON stores (`data/*.json`). |
 
 ---
@@ -31,7 +32,7 @@ For a comprehensive technical deep-dive, component diagrams, and sequence flows,
          ├── Fallback Cascade (llama-3.3-70b)                          ├── Hotkey (Ctrl+Shift+S)
          ├── Autonomous Self-Debugging                                 └── Voice Engine (TTS/STT)
          ├── Tool Registry (10 Desktop Tools)
-         └── Skill Manager (Daily Brief, Study, Job Tracker, CRM)
+         └── Skill Manager (Insights, Daily Brief, Study, Job, CRM)
 ```
 
 ---
@@ -43,10 +44,19 @@ For a comprehensive technical deep-dive, component diagrams, and sequence flows,
 - **Node.js v20+** & **npm** (for React development)
 - **Windows OS**
 
-### 2. Environment Setup
-Activate the virtual environment and verify your Groq API credentials:
+### 2. Installation & Configuration
 ```powershell
-.\venv\Scripts\activate
+# Clone the repository
+git clone https://github.com/Arslan93/Sera-.git
+cd Sera-
+
+# Set up Python Virtual Environment
+python -m venv venv
+.\venv\Scripts\pip.exe install -r requirements.txt
+
+# Install frontend dependencies
+npm --prefix frontend install
+npm install
 ```
 Ensure your `.env` contains:
 ```ini
@@ -83,9 +93,11 @@ npm run dev
 
 ## 🧪 Automated Testing
 
-SERA includes a comprehensive test suite of **77 automated unit and integration tests**:
+SERA includes a comprehensive test suite of **86 automated unit and integration tests**:
 
 ```powershell
+npm test
+# OR
 .\venv\Scripts\python.exe -m pytest tests/ -v
 ```
 
@@ -96,6 +108,7 @@ Tests cover:
 - Voice synthesis and Whisper transcription
 - Desktop automation (process control, file search, screenshots)
 - Dynamic skill plugin lifecycle & discovery
+- Hardware, OS & Software Inventory diagnostics (System Insights)
 - Daily Brief, Study Session, Job Tracker, and CRM engines
 - Global Hotkey clipboard capture and debounce logic
 - FastAPI REST endpoints, WebSocket streaming, and static asset delivery

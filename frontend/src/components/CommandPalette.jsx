@@ -26,8 +26,9 @@ export default function CommandPalette() {
     { id: '3', title: 'Go to Pipeline (CRM & Jobs)', category: 'Navigation', shortcut: '3', action: () => setCurrentView('pipeline') },
     { id: '4', title: 'Go to Study Lab', category: 'Navigation', shortcut: '4', action: () => setCurrentView('study') },
     { id: '5', title: 'Go to Dev & System Tools', category: 'Navigation', shortcut: '5', action: () => setCurrentView('dev') },
-    { id: '6', title: 'Refresh Daily Orientation Brief', category: 'Actions', shortcut: 'R', action: () => fetchBrief() },
-    { id: '7', title: 'Start New Chat Session', category: 'Actions', shortcut: 'N', action: () => resetSession() },
+    { id: '6', title: 'Go to System Insights (PC Diagnostics)', category: 'Navigation', shortcut: '6', action: () => setCurrentView('insights') },
+    { id: '7', title: 'Refresh Daily Orientation Brief', category: 'Actions', shortcut: 'R', action: () => fetchBrief() },
+    { id: '8', title: 'Start New Chat Session', category: 'Actions', shortcut: 'N', action: () => resetSession() },
     { 
       id: '8', 
       title: 'Start Study: Operating Systems', 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
-import { LayoutDashboard, MessageSquare, Kanban, GraduationCap, Sliders } from 'lucide-react';
+import { LayoutDashboard, MessageSquare, Kanban, GraduationCap, Sliders, MonitorCheck } from 'lucide-react';
 
 export default function NavRail() {
   const { currentView, setCurrentView, jobFollowups } = useApp();
@@ -51,6 +51,14 @@ export default function NavRail() {
         >
           <Sliders className="w-4 h-4" />
           <span>Dev & System</span>
+        </button>
+
+        <button 
+          onClick={() => setCurrentView('insights')}
+          className={`nav-btn ${currentView === 'insights' ? 'active' : ''}`}
+        >
+          <MonitorCheck className="w-4 h-4" />
+          <span>System Insights</span>
         </button>
       </nav>
 

@@ -9,6 +9,7 @@ import ChatHubView from './components/views/ChatHubView';
 import PipelineView from './components/views/PipelineView';
 import StudyLabView from './components/views/StudyLabView';
 import DevSystemView from './components/views/DevSystemView';
+import SystemInsightsView from './components/views/SystemInsightsView';
 
 function MainLayout() {
   const { currentView } = useApp();
@@ -26,6 +27,7 @@ function MainLayout() {
           {currentView === 'pipeline' && <PipelineView />}
           {currentView === 'study' && <StudyLabView />}
           {currentView === 'dev' && <DevSystemView />}
+          {currentView === 'insights' && <SystemInsightsView />}
         </main>
       </div>
 

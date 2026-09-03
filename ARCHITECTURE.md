@@ -79,6 +79,7 @@ Located at `frontend/src/`, built with **React 18**, **Tailwind CSS**, and **Vit
   3. **Pipeline**: 5-stage Job Application Funnel and 5-stage Client CRM Kanban board with inline stage transitions.
   4. **Study Lab**: RGPV Exam revision sessions with live stopwatch and 7-day progress breakdown.
   5. **Dev & System**: Multi-template code scaffolder, dynamic skill manager toggles, and clipboard capture audit logs.
+  6. **System Insights**: 8-subtab diagnostic workbench covering hardware vitals, multi-drive storage breakdown, installed applications, game libraries (Steam/Epic), startup items, running processes, network, battery, and account metadata.
 - **`CommandPalette.jsx`**: Global `Ctrl+K` keyboard overlay supporting instant view switching, study block triggers, and settings toggling.
 
 ---
@@ -92,6 +93,7 @@ Powered by **FastAPI** and **Uvicorn**:
   - Streams LLM markdown chunks (`{"type": "chunk", "content": "..."}`).
 - **REST Endpoints (`/api/*`)**:
   - System Telemetry: `/api/system-info` (CPU, RAM, Disk, Battery via `psutil`).
+  - System Insights Diagnostics: `/api/system/overview`, `/api/system/apps`, `/api/system/games`, `/api/system/startup`, `/api/system/processes`, `/api/system/network`, `/api/system/battery`, `/api/system/account`.
   - Skills & Controls: `/api/skills`, `/api/skills/toggle`, `/api/scaffold`.
   - CRM & Leads: `/api/leads`, `/api/leads/status`.
   - Jobs & Internships: `/api/jobs`, `/api/jobs/stage`, `/api/jobs/stats`, `/api/jobs/followups`.
@@ -130,12 +132,13 @@ class BaseSkill(ABC):
 ```
 
 #### Loaded Skill Modules:
-1. **`notes_skill.py`**: Quick notes manager with search, tagging, and active study session tag auto-injection (`data/notes.json`).
-2. **`crm_skill.py`**: Freelance client and deal pipeline manager with contact tracking and stage movement (`data/leads.json`).
-3. **`daily_brief_skill.py`**: Morning orientation compiler uniting pending follow-ups, overdue leads, recent coding recap, and hardware health.
-4. **`study_session_skill.py`**: RGPV exam preparation manager tracking active study blocks, automatic duration calculation, and self-quizzing (`data/study_sessions.json`).
-5. **`job_tracker_skill.py`**: Internship and job application pipeline with 14-day follow-up heuristic reminders (`data/job_applications.json`).
-6. **`clipboard_capture_skill.py`**: Global hotkey classifier classifying text as `code`, `link`, `task`, or `note` and filing automatically (`data/captures.json`, `data/read_later.json`).
+1. **`system_insights_skill.py`**: Comprehensive read-only hardware, multi-drive storage, installed apps (registry), games (Steam/Epic), startup entries, running processes, network, battery, and account diagnostics.
+2. **`notes_skill.py`**: Quick notes manager with search, tagging, and active study session tag auto-injection (`data/notes.json`).
+3. **`crm_skill.py`**: Freelance client and deal pipeline manager with contact tracking and stage movement (`data/leads.json`).
+4. **`daily_brief_skill.py`**: Morning orientation compiler uniting pending follow-ups, overdue leads, recent coding recap, and hardware health.
+5. **`study_session_skill.py`**: RGPV exam preparation manager tracking active study blocks, automatic duration calculation, and self-quizzing (`data/study_sessions.json`).
+6. **`job_tracker_skill.py`**: Internship and job application pipeline with 14-day follow-up heuristic reminders (`data/job_applications.json`).
+7. **`clipboard_capture_skill.py`**: Global hotkey classifier classifying text as `code`, `link`, `task`, or `note` and filing automatically (`data/captures.json`, `data/read_later.json`).
 
 ---
 
@@ -244,3 +247,20 @@ The visual heartbeat of the interface follows a strict 4-state reactive model:
    - All state JSON files (`leads.json`, `notes.json`, `study_sessions.json`, `job_applications.json`, `captures.json`) are written via temporary files followed by atomic `os.replace` to prevent corrupted JSON states on crashes.
 4. **Resilient Network Degradation**:
    - If the WebSocket drops, the React frontend automatically retries every 3.5 seconds and seamlessly falls back to HTTP REST for conversation turns.
+5. **Read-Only Diagnostic Privacy Scope**:
+   - The `system_insights` skill is strictly read-only and explicitly scoped to diagnostic telemetry.
+   - Credentials, passwords, browser caches, and sensitive tokens are never queried, logged, or exposed.
+   - REST endpoints are strictly bound to `127.0.0.1` (localhost) only.
+
+---
+
+## 6. Automated Verification Matrix
+
+- **Total Automated Test Suites**: **86 Tests** across 12 test files (`tests/test_*.py`).
+- **Test Categories**:
+  - Core cognitive loop & Groq fallback cascade: `test_phase1.py`, `test_phase2.py`, `test_e2e_integration.py`.
+  - PC control & self-debugging code runner: `test_phase4.py`.
+  - Voice STT/TTS & wake word listener: `test_phase3.py`, `test_phase5.py`.
+  - Dynamic skill plugin architecture: `test_study_session.py`, `test_job_tracker.py`, `test_daily_brief.py`, `test_clipboard_capture.py`.
+  - Hardware, OS & Inventory diagnostics: `test_system_insights.py`.
+  - FastAPI WebSocket & REST gateways: `test_web_server.py`.

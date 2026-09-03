@@ -458,6 +458,18 @@ Jarvis/
    - Vite builds directly to `interfaces/web/` so running `python main.py --ui` serves the React production build out-of-the-box on `http://127.0.0.1:8000`.
    - Developer mode enabled with `npm run dev` in `frontend/` with hot module replacement (HMR) proxying to FastAPI.
    - Full test suite verified at **77/77 passing automated tests**.
+17. **Phase 7: System Insights — Hardware, OS & Software Diagnostics:**
+   - **Goal**: Full-spectrum, read-only PC hardware telemetry, OS identification, application inventory, game detection, startup items, and running process diagnostics.
+   - **Components Implemented**:
+     1. **Backend Skill (`skills/system_insights_skill.py`)**:
+        - `get_pc_overview`, `list_installed_apps`, `list_installed_games`, `list_startup_programs`, `list_running_processes`, `get_network_info`, `get_battery_and_power_info`, `get_user_account_info`.
+     2. **FastAPI Endpoints (`interfaces/web_server.py`)**:
+        - New `/api/system/*` routes strictly bound to `127.0.0.1`.
+     3. **React Frontend View (`frontend/src/components/views/SystemInsightsView.jsx`)**:
+        - New left-rail navigation item "System Insights", in-page sub-tabs, interactive search, and live polling.
+     4. **Automated Verification**:
+        - 9 new unit/integration tests in `tests/test_system_insights.py`.
+        - Full test suite verified at **86/86 passing automated tests**.
 
 ---
 
