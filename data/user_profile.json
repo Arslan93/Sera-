@@ -1,0 +1,55 @@
+﻿{
+  "name": "Arslan Ali Mansoori",
+  "preferred_name": "Arslan",
+  "title": "AI Engineer & Full-Stack Developer",
+  "location": "Manik Bagh road, Indore, India",
+  "email": "arslanmansoori93@gmail.com",
+  "phone": "+91 9131045507",
+  "github": "https://github.com/Arslan93",
+  "linkedin": "https://linkedin.com/in/arslan-ali-mansoori-bb6237331",
+  "summary": "AI Engineer and Full-Stack Developer with experience building AI-powered applications, inspection systems, and scalable web platforms using React.js, Node.js, MongoDB, and modern AI tools. Strong background in hackathons, rapid prototyping, UI development, and integrating AI workflows into practical products.",
+  "education": {
+    "degree": "Bachelor of Technology (B.Tech)",
+    "duration": "2024 - 2028",
+    "institution": "Sushila Devi Bansal College Of Engineering, Indore",
+    "focus": "AI systems, web development, and practical product building"
+  },
+  "technical_skills": {
+    "languages": ["JavaScript", "Python", "Java", "HTML5", "CSS3", "Tailwind CSS"],
+    "frontend_backend": ["React.js", "Node.js", "REST APIs", "AI APIs", "Prompt Engineering"],
+    "databases_tools": ["MongoDB", "MySQL", "Git", "GitHub", "Lovable", "Problem-Solving"]
+  },
+  "professional_experience": [
+    {
+      "role": "AI Engineer Intern",
+      "company": "Shippoz E-commerce",
+      "duration": "May 2026 - Present",
+      "highlights": [
+        "Worked on AI-integrated solutions and automation workflows for e-commerce operations.",
+        "Collaborated with development teams on API integration, data handling, and workflow optimization.",
+        "Contributed to frontend and backend development using React.js, Node.js, and MongoDB.",
+        "Participated in debugging, testing, and improving system performance and user experience."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "DeepGuard — AI Photo Detector",
+      "description": "AI-powered image analysis platform for defect and photo detection using React.js and AI APIs."
+    },
+    {
+      "name": "Sustainability Development System",
+      "description": "Smart environmental monitoring and visualization platform with real-time data handling and presentation dashboard."
+    },
+    {
+      "name": "AeroInspect AI",
+      "description": "AI-based aircraft inspection platform for corrosion and defect detection with automated PDF reporting and dashboard."
+    }
+  ],
+  "achievements": [
+    "National Finalist — DeepGuard | IIM Lucknow Hackathon",
+    "Runner-Up — Sustainability Development System | Sage University Hackathon",
+    "AI Engineer Intern — Shippoz E-commerce",
+    "Participated in multiple national-level hackathons and innovation competitions"
+  ]
+}

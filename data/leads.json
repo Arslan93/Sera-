@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lead_ec585d",
+    "name": "Alice Enterprise",
+    "email": "alice@enterprise.com",
+    "phone": "+91 9876543210",
+    "company": "Enterprise AI Labs",
+    "deal_value": "$10,000",
+    "status": "Won",
+    "notes": "Enterprise AI automation workflow contract signed.",
+    "created_at": "2026-08-31T14:25:46.712721",
+    "updated_at": "2026-08-31T14:25:46.735670"
+  },
+  {
+    "id": "lead_fd3d77",
+    "name": "John Doe",
+    "email": "john@acme.com",
+    "phone": "+91 9123456780",
+    "company": "Acme Corp",
+    "deal_value": "$5,000",
+    "status": "New",
+    "notes": "Inquiry regarding custom inventory dashboard.",
+    "created_at": "2026-08-31T14:40:40.918340",
+    "updated_at": "2026-08-31T14:40:40.918340"
+  },
+  {
+    "id": "lead_7a91bf",
+    "name": "Sarah Jenkins",
+    "email": "sarah@luminahealth.io",
+    "phone": "+1 415 555 2671",
+    "company": "Lumina Health",
+    "deal_value": "$8,500",
+    "status": "Proposal",
+    "notes": "Sent scoping proposal for HIPAA-compliant patient intake.",
+    "created_at": "2026-09-01T10:15:00.000000",
+    "updated_at": "2026-09-01T10:15:00.000000"
+  },
+  {
+    "id": "lead_4d28cc",
+    "name": "Vikram Mehta",
+    "email": "vikram@finscale.in",
+    "phone": "+91 9823011223",
+    "company": "FinScale Technologies",
+    "deal_value": "$12,000",
+    "status": "Contacted",
+    "notes": "Introductory call completed; reviewing architecture specs.",
+    "created_at": "2026-09-02T16:30:00.000000",
+    "updated_at": "2026-09-02T16:30:00.000000"
+  },
+  {
+    "id": "lead_c9193b",
+    "name": "Alice Enterprise",
+    "email": "alice@enterprise.com",
+    "phone": "",
+    "company": "",
+    "deal_value": "$10,000",
+    "status": "Won",
+    "notes": "Interested in AI Automation | Contract Signed",
+    "created_at": "2026-09-03T12:18:44.992454",
+    "updated_at": "2026-09-03T12:18:45.014744"
+  },
+  {
+    "id": "lead_e3571d",
+    "name": "Alice Enterprise",
+    "email": "alice@enterprise.com",
+    "phone": "",
+    "company": "",
+    "deal_value": "$10,000",
+    "status": "Won",
+    "notes": "Interested in AI Automation | Contract Signed",
+    "created_at": "2026-09-03T12:34:42.452101",
+    "updated_at": "2026-09-03T12:34:42.469619"
+  },
+  {
+    "id": "lead_db3821",
+    "name": "Alice Enterprise",
+    "email": "alice@enterprise.com",
+    "phone": "",
+    "company": "",
+    "deal_value": "$10,000",
+    "status": "Won",
+    "notes": "Interested in AI Automation | Contract Signed",
+    "created_at": "2026-09-03T13:07:56.617279",
+    "updated_at": "2026-09-03T13:07:56.646917"
+  },
+  {
+    "id": "lead_c2e457",
+    "name": "Alice Enterprise",
+    "email": "alice@enterprise.com",
+    "phone": "",
+    "company": "",
+    "deal_value": "$10,000",
+    "status": "Won",
+    "notes": "Interested in AI Automation | Contract Signed",
+    "created_at": "2026-09-03T13:12:05.095234",
+    "updated_at": "2026-09-03T13:12:05.120959"
+  }
+]

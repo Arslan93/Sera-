@@ -1,0 +1,43 @@
+﻿{
+  "developer": "Arslan Ali Mansoori",
+  "primary_stack": [
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Python",
+    "JavaScript (ES6+)",
+    "Tailwind CSS"
+  ],
+  "code_standards": {
+    "javascript_react": {
+      "style": "Modern Functional Components with Hooks",
+      "styling": "Tailwind CSS utility classes",
+      "state_management": "React hooks (useState, useEffect, useContext)",
+      "formatting": "Clean modular files with descriptive prop definitions"
+    },
+    "python": {
+      "style": "PEP 8 compliant, type hints included",
+      "docstrings": "Concise docstrings with args & return types",
+      "error_handling": "Explicit try-except blocks with logging"
+    },
+    "backend_node": {
+      "architecture": "Controller-Service-Model architecture",
+      "database": "Mongoose / MongoDB with proper schema validation and indexing",
+      "api_style": "RESTful endpoints with JSON responses and error middleware"
+    }
+  },
+  "preferred_output": {
+    "format": "Production-ready, clean, well-commented code",
+    "include_type_hints": true,
+    "include_error_handling": true,
+    "ready_to_ship": true
+  },
+  "quick_templates": {
+    "react_component": "Functional component with Tailwind styling and hook structure",
+    "express_router": "Express router module with async handler and input validation",
+    "mongoose_schema": "Mongoose schema with timestamps and indexing",
+    "fastapi_router": "FastAPI APIRouter with Pydantic schemas and dependency injection",
+    "python_script": "Python script with argparse/main guard and type annotations"
+  }
+}

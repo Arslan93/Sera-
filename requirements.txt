@@ -1,0 +1,17 @@
+groq
+python-dotenv
+rich
+pydantic
+psutil
+pyautogui
+pytest
+edge-tts
+sounddevice
+soundfile
+keyboard
+numpy
+fastapi
+uvicorn
+websockets
+pyperclip
+

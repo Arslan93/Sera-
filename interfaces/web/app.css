@@ -1,0 +1,536 @@
+/* SERA Studio Command Center — Core Stylesheet (Daylight Edition) */
+
+:root {
+  --surface-base: #F8FAFC;
+  --surface-card: #FFFFFF;
+  --surface-card-sub: #F1F5F9;
+  --surface-hover: #EEF2F6;
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --accent-action: #3B82F6;
+  --accent-action-hover: #2563EB;
+  --accent-live: #059669;
+  --accent-alert: #D97706;
+  --accent-danger: #E11D48;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #94A3B8;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, 'Courier New', monospace;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 1px rgba(15, 23, 42, 0.02);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--surface-base);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Subtle, refined scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Studio Dimensional Cards */
+.studio-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.studio-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.studio-card-hero {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.2s ease;
+}
+
+.studio-well {
+  background-color: var(--surface-card-sub);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+}
+
+/* Navigation Rail Buttons */
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.12s ease, color 0.12s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-btn:hover {
+  background-color: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.nav-btn.active {
+  background-color: #EFF6FF;
+  color: var(--accent-action);
+  font-weight: 600;
+}
+
+.nav-btn.active svg {
+  color: var(--accent-action);
+}
+
+/* Studio Buttons */
+.btn-primary {
+  background-color: var(--accent-action);
+  color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 6px 13px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(59, 130, 246, 0.25);
+  transition: background-color 0.12s ease, transform 0.08s ease;
+}
+.btn-primary:hover {
+  background-color: var(--accent-action-hover);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  background-color: var(--surface-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.12s ease, border-color 0.12s ease, transform 0.08s ease;
+}
+.btn-secondary:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--border-strong);
+}
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* ═══════════ 3D SIGNATURE DIAL CLUSTER ═══════════ */
+.dial-housing {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
+  box-shadow: 
+    0 4px 8px -1px rgba(15, 23, 42, 0.08),
+    0 2px 4px -1px rgba(15, 23, 42, 0.04),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 2px 0 rgba(15, 23, 42, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dial-track-recess {
+  position: absolute;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: #EDF2F7;
+  box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dial-hub {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
+  box-shadow: 
+    0 2px 5px rgba(15, 23, 42, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Progress SVG Rings inside Dial */
+.dial-svg {
+  transform: rotate(-90deg);
+  width: 76px;
+  height: 76px;
+}
+.dial-svg-track {
+  fill: none;
+  stroke: #E2E8F0;
+  stroke-width: 6;
+}
+.dial-svg-value {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Chat Styling */
+.chat-bubble-user {
+  background-color: var(--accent-action);
+  color: #FFFFFF;
+  border-radius: 12px 12px 2px 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  padding: 10px 14px;
+  max-width: 78%;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.25);
+}
+
+.chat-bubble-ai {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px 12px 12px 2px;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  line-height: 1.55;
+  padding: 12px 16px;
+  max-width: 85%;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Data Monospace */
+.data-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* Prose Markdown */
+.prose-sera p {
+  margin-top: 0;
+  margin-bottom: 0.6em;
+}
+.prose-sera p:last-child {
+  margin-bottom: 0;
+}
+.prose-sera pre {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  overflow-x: auto;
+  margin: 0.6em 0;
+}
+.prose-sera code:not(pre code) {
+  background-color: #EFF6FF;
+  border: 1px solid #DBEAFE;
+  color: #1D4ED8;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.prose-sera ul, .prose-sera ol {
+  padding-left: 18px;
+  margin: 0.4em 0 0.6em 0;
+}
+.prose-sera li {
+  margin-bottom: 0.25em;
+}
+.prose-sera h1, .prose-sera h2, .prose-sera h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.8em;
+  margin-bottom: 0.3em;
+}
+
+/* Subtle purposeful entrance stagger on load */
+@keyframes studio-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════ AI STATE ORB (FUNCTIONAL 3D HERO MOMENT) ═══════════ */
+.ai-orb-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-orb {
+  border-radius: 50%;
+  position: relative;
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.ai-orb-mini {
+  width: 20px;
+  height: 20px;
+}
+
+.ai-orb-hero {
+  width: 44px;
+  height: 44px;
+}
+
+/* Specular light highlight on the 3D sphere */
+.ai-orb::before {
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: 15%;
+  width: 40%;
+  height: 35%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 80%);
+  pointer-events: none;
+}
+
+/* State 1: IDLE */
+.ai-orb.state-idle {
+  background: radial-gradient(circle at 35% 35%, #93C5FD 0%, #3B82F6 50%, #1D4ED8 100%);
+  box-shadow: 
+    0 2px 6px rgba(59, 130, 246, 0.3),
+    0 0 12px rgba(59, 130, 246, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+  animation: orb-breathe 4s ease-in-out infinite;
+}
+
+/* State 2: LISTENING */
+.ai-orb.state-listening {
+  background: radial-gradient(circle at 35% 35%, #A7F3D0 0%, #10B981 50%, #047857 100%);
+  box-shadow: 
+    0 2px 8px rgba(16, 185, 129, 0.4),
+    0 0 16px rgba(16, 185, 129, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+  animation: orb-listening-pulse 1.2s ease-in-out infinite;
+}
+
+/* State 3: THINKING / TOOL CALL */
+.ai-orb.state-thinking {
+  background: radial-gradient(circle at 35% 35%, #DDD6FE 0%, #8B5CF6 50%, #5B21B6 100%);
+  box-shadow: 
+    0 2px 10px rgba(139, 92, 246, 0.45),
+    0 0 20px rgba(139, 92, 246, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+  animation: orb-thinking-spin 1.8s linear infinite;
+}
+
+/* State 4: SPEAKING */
+.ai-orb.state-speaking {
+  background: radial-gradient(circle at 35% 35%, #FEF08A 0%, #F59E0B 50%, #B45309 100%);
+  box-shadow: 
+    0 2px 10px rgba(245, 158, 11, 0.4),
+    0 0 18px rgba(245, 158, 11, 0.25),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+  animation: orb-speaking-pulse 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes orb-breathe {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.04); filter: brightness(1.08); }
+}
+
+@keyframes orb-listening-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
+  50% { transform: scale(1.08); box-shadow: 0 0 20px rgba(16, 185, 129, 0.6); }
+}
+
+@keyframes orb-thinking-spin {
+  0% { transform: rotate(0deg) scale(1.02); }
+  50% { transform: rotate(180deg) scale(1.06); }
+  100% { transform: rotate(360deg) scale(1.02); }
+}
+
+@keyframes orb-speaking-pulse {
+  0% { transform: scale(0.98); }
+  100% { transform: scale(1.07); }
+}
+
+/* ═══════════ TOAST NOTIFICATION SYSTEM ═══════════ */
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast-item {
+  pointer-events: auto;
+  min-width: 280px;
+  max-width: 380px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  animation: toast-slide-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toast-item.toast-success { border-left-color: var(--accent-live); }
+.toast-item.toast-info { border-left-color: var(--accent-action); }
+.toast-item.toast-warning { border-left-color: var(--accent-alert); }
+.toast-item.toast-error { border-left-color: var(--accent-danger); }
+
+@keyframes toast-slide-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ═══════════ COMMAND PALETTE (CTRL+K) ═══════════ */
+#cmd-palette-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 90;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+}
+
+#cmd-palette-card {
+  width: 100%;
+  max-width: 540px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: cmd-drop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cmd-drop {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cmd-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-primary);
+  transition: background-color 0.1s ease;
+}
+.cmd-item:hover, .cmd-item.selected {
+  background-color: #EFF6FF;
+  color: var(--accent-action);
+}
+
+/* ═══════════ GAUGE THRESHOLD STATES ═══════════ */
+.dial-warning circle.dial-svg-value {
+  stroke: #F59E0B !important;
+}
+.dial-critical circle.dial-svg-value {
+  stroke: #EF4444 !important;
+  animation: dial-alarm 1s ease-in-out infinite;
+}
+@keyframes dial-alarm {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.4)); }
+  50% { filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.8)); }
+}
+
+/* ═══════════ MINI SPARKLINE POPOVER ═══════════ */
+.sparkline-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 28px;
+  padding: 4px 6px;
+  background: #F1F5F9;
+  border-radius: 4px;
+}
+.sparkline-bar {
+  flex: 1;
+  background: #3B82F6;
+  border-radius: 1px;
+  transition: height 0.3s ease;
+}
+
+/* ═══════════ ACCORDION CRM CARDS ═══════════ */
+.crm-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s cubic-bezier(0.16, 1, 0.3, 1), padding 0.2s ease;
+}
+.crm-accordion-body.open {
+  max-height: 220px;
+  padding-top: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
